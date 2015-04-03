@@ -5,7 +5,7 @@ post '/photo' do
   @photo = @album.photos.build #create photo at new instance of activerecord association
   @photo.path = params[:path]
   # p @photo
-  p @photo.path
+  # p @photo.path
   if @photo.save
     redirect "/albums/#{@album.id}"
     # p "#{@album.id}"

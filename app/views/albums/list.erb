@@ -1,15 +1,17 @@
 <div class="form-group" >
-  <%= @albums %>
+  <h1><%= @albums.name %></h1>
 </div>
 <div class="form-group">
-  <table>
-    <th>View and album</th>
+  <table class="table table-hover">
+    <th><h4>View and album</h4></th>
     <tr>
       <% @albums.each do |album| %>
-      <td class="<%= album.id %>"><a href="/albums/<%= album.id %>"><%= album.name %></a>
+      <td class="<%= album.id %>"><a href="/albums/<%= album.id %>"><h5><%= album.name %></h5></a>
       </td>
     </tr>
         <% end %>
+  </table>
+
 
 </table>
 </div>

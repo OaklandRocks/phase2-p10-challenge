@@ -10,14 +10,14 @@ get '/sessions/new' do
 end
 
 post '/sessions' do
-  @user = User.where(username: params[:username]).first
-  if @user && @user.authenticate(params[:password])
-    session[:id] = @user.id
-    redirect "/albums/all"
+  @user = User.find_by(username: params[:user][:username])
+  if @user && @user.authenticate(params[:user][:password])
+    session[:user_id] = @user.id
+    redirect "/users/#{@user.id}"
   else
    @error
    flash[:error] = "User Name and password please"
-    redirect("/sessions/new")
+    redirect "/sessions/new"
   end
 end
 

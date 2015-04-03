@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="/maxcdn.bootstrapcdn.com/bootswatch/3.3.4/journal/bootstrap.min.css">
   <!--
     normalize.css removes cross-browser differences in defaults, e.g.,
     differences in how form elements appear between Firefox and IE
@@ -17,22 +18,22 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>Send a picture</title>
 </head>
 <body>
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
   <div class="container">
     <% if current_user %>
-    <a href="/albums/new"><button class="btn btn-info">New Album</button></a>
-    <a href="/albums/all"><button class="btn btn-info">Your Albums</button></a>
+    <a href="/albums/new"><button class="btn btn-info btn-lg active">New Album</button></a>
+    <a href="/albums/all"><button class="btn btn-info btn-lg active">Your Albums</button></a>
     <form id="sign-out" action="/sessions/<%= current_user.id %>" method="post">
       <input name="_method" type="hidden" value="delete" />
        <!-- <input type="submit" value="Sign Out"> -->
-      <button type="submit" class="btn btn-info">Sign Out</button>
+      <button type="submit" class="btn btn-info btn-lg active">Sign Out</button>
     </form>
     <% else%>
-    <a href="/sessions/new"><button class="btn btn-primary">Log In</button></a>
-    <a href="/users/new"><button class="btn btn-primary">Sign Up</button></a>
+    <a href="/sessions/new"><button class="btn btn-primary btn-lg active">Log In</button></a>
+    <a href="/users/new"><button class="btn btn-primary btn-lg active">Sign Up</button></a>
     <% end%>
   </div>
 </nav>
