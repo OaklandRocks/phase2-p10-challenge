@@ -124,6 +124,7 @@ DEPENDENCIES
   dotenv
   factory_girl
   faker
+  fog
   mini_magick
   pg
   pry-debugger

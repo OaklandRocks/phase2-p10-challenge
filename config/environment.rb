@@ -27,6 +27,7 @@ require 'carrierwave'
 require 'carrierwave/processing/mini_magick'
 require 'dotenv'
 require 'mini_magick'
+require 'fog'
 
 Dotenv.load
 ENV['RACK_ENV'] ||= 'development'
@@ -62,6 +63,17 @@ require APP_ROOT.join('config', 'database')
 require 'carrierwave/orm/activerecord'
 # Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
 Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
-CarrierWave.configure do |config|
-    config.root = APP_ROOT + 'public/'
-end
+# CarrierWave.configure do |config|
+#     config.root = APP_ROOT + 'public/'
+# end
+# CarrierWave.configure do |config|
+#     config.root = APP_ROOT + 'public/'
+#     config.fog_credentials = {
+#         provider:                'AWS',
+#         aws_access_key_id:      ENV['AWS_S3_KEY_ID'],
+#         aws_secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY'],
+#         region:                 ENV['AWS_S3_REGION'],
+#       }
+#       config.fog_directory  = 'jiveturkey',
+#       #config.fog_public     = false
+# end

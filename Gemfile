@@ -20,6 +20,9 @@ gem 'carrierwave'
 gem 'mini_magick'
 gem 'twilio-ruby', '~> 3.12'
 gem 'dotenv'
+gem 'fog'
+gem 'carrierwave'
+
 
 group :test do
   gem 'shoulda-matchers'

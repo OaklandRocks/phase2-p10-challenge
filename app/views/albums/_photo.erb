@@ -1,8 +1,9 @@
+<div class="photo" data-photo-id="<%= photo.id %>">
 <a href class="delete-photo">x</a>
 <a href="/photo/<%=photo.id %>" class="individual-page">O</a>
-<li><img class="album_image" src="<%= photo.path %>"></li>
+<div><img class="album_image" src="<%= photo.path %>"></div>
 <form action="/photo/<%=photo.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="DELETE">
 </form>
-
+</div>

@@ -1,7 +1,26 @@
+require 'pry'
+
+
+CarrierWave.configure do |config|
+  # binding.pry
+    config.root = APP_ROOT + 'public/'
+    config.fog_credentials = {
+        provider:                'AWS',
+        aws_access_key_id:      ENV['AWS_S3_KEY_ID'],
+        aws_secret_access_key:  ENV['AWS_SECRET_ACCESS_KEY'],
+        region:                 'us-west-1',
+        # ENV['AWS_S3_REGION'],
+      }
+      config.fog_directory  = 'turkeysandwhich'
+      config.fog_public     = false
+ end
+
+
 class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
-    storage :file
-    # storage :fog
+    # storage :file
+    # binding.pry
+    storage :fog
 
 
     process :resize_to_fill => [200, 240]
