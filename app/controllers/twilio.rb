@@ -19,7 +19,10 @@ post '/send_sms' do
             :body => "#{message}",
             :media_url => 'https://farm3.staticflickr.com/2533/4042396217_33e08e2df6_m.jpg'
             })
-             redirect '/'
+             redirect '/confirmation'
+end
+get '/confirmation' do
+  erb :confirmation
 end
 
 # "http//:herokuapp/uploads/photos/#{path}"
