@@ -6,9 +6,9 @@ class PhotoUploader < CarrierWave::Uploader::Base
 
     process :resize_to_fill => [200, 240]
 
-    version :thumb do
-      process :resize_to_fill => [150, 150]
-    end
+    # version :thumb do
+    #   process :resize_to_fill => [150, 150]
+    # end
 
   def store_dir
     'uploads/photos'

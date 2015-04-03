@@ -1,7 +1,6 @@
 <a href class="delete-photo">x</a>
+<div class=""></div>
 <li><img class="album_image" src="<%= photo.path %>"></li>
-<li><%= photo.id %></li>
-<li><%= photo.path %></li>
 <form action="/photo/<%=photo.id %>" method="POST">
   <input type="hidden" name="_method" value="DELETE">
   <input type="submit" value="DELETE">

@@ -61,7 +61,6 @@ require APP_ROOT.join('config', 'database')
 #set up carrierwave
 require 'carrierwave/orm/activerecord'
 # Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
-
 Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
 CarrierWave.configure do |config|
     config.root = APP_ROOT + 'public/'

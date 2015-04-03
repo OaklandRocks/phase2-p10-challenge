@@ -21,10 +21,9 @@ get '/photo/:id' do
 end
 
 delete '/photo/:id' do
-  p "I am sam I am I am"
   @photo = Photo.find(params[:id])
   @photo.destroy
-  redirect "/albums/new"
+  redirect "/albums/#{@photo.album_id}"
 end
 
 
