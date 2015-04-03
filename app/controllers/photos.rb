@@ -17,6 +17,7 @@ end
 
 get '/photo/:id' do
   @photo = Photo.find(params[:id])
+  @display_photo = @photo.path
   erb :'indivdual_photo'
 end
 
