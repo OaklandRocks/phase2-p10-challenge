@@ -1,0 +1,17 @@
+<%if @photo.try(:errors) %>
+  <h3 style="color: red"><%= @photo.errors.full_messages %></h3>
+<% end %>
+<div class="form-group"><% if flash[:error] != nil %>
+  <%= flash[:error] %>
+<% end  %></div>
+<% if current_user %>
+  <form action="/photo" enctype="multipart/form-data" method="POST">
+    <input name="album_id" value="<%= params[:id] %>" type="hidden">
+    <input type="file" name="path" class="choose_file" >
+    <button type="submit" class="btn btn-info image_upload">Upload</button>
+  </form>
+  <hr><ul>
+    <% @album.photos.each do |photo| %>
+    <%= erb :'albums/_photo', layout: false, :locals=>{photo: photo} %>
+  <% end %>
+<% end %>

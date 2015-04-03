@@ -1,0 +1,25 @@
+body { padding-top: 80px; }
+
+.container {
+  margin: 30px auto;
+  width: 1000px;
+}
+
+
+th {
+  text-align: left;
+}
+
+form{
+  display: inline;
+}
+
+.choose_file{
+  max-width: 300px;
+  display: inline !important;
+}
+
+.album_image{
+  height: 300px;
+  float: left
+}

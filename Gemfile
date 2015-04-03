@@ -16,12 +16,17 @@ gem 'rake'
 gem 'shotgun'
 gem 'bcrypt-ruby'
 gem 'rack-flash3'
+gem 'carrierwave'
+gem 'mini_magick'
+gem 'twilio-ruby', '~> 3.12'
+gem 'dotenv'
 
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
   gem 'rspec', '~>3.0'
   gem 'capybara'
+  gem 'pry-debugger'
 end
 
 group :test, :development do

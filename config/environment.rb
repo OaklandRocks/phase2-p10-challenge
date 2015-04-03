@@ -21,6 +21,15 @@ require "sinatra/reloader" if development?
 require 'erb'
 require 'bcrypt'
 require 'rack-flash'
+require 'pry-debugger'
+
+require 'carrierwave'
+require 'carrierwave/processing/mini_magick'
+require 'dotenv'
+require 'mini_magick'
+
+Dotenv.load
+ENV['RACK_ENV'] ||= 'development'
 
 enable :sessions
 use Rack::Flash, :sweep => true
@@ -48,3 +57,12 @@ Dir[APP_ROOT.join('app', 'helpers', '*.rb')].each { |file| require file }
 
 # Set up the database and models
 require APP_ROOT.join('config', 'database')
+
+#set up carrierwave
+require 'carrierwave/orm/activerecord'
+# Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
+
+Dir[APP_ROOT.join('app', 'uploaders', '*.rb')].each { |file| require file }
+CarrierWave.configure do |config|
+    config.root = APP_ROOT + 'public/'
+end

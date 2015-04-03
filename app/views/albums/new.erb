@@ -1,0 +1,16 @@
+<%= current_user %>
+ <% if current_user %>
+  <form action='/albums' method='post' role="form">
+    <div class="form-group">
+      <label for="inputAlbumName">New Album Name</label>
+      <input name="name" type="name" class="form-control" id="inputAlbumName" placeholder="New Album Name">
+    </div>
+    <button type="submit" name="submit" value="login" class="btn btn-default">Create</button>
+  </form>
+  <% else %>
+  <div class="container">
+    <p>
+      You should sign up and start uploading pictures
+    </p>
+  </div>
+<% end %>

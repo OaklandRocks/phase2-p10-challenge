@@ -1,0 +1,13 @@
+<h1>Sign UP</h1>
+
+<form action='/users' method='post' role="form">
+  <div class="form-group">
+    <label for="inputUsername">Username</label>
+    <input type="text" name="user[username]" placeholder="e.g., joe" >
+  </div>
+  <div class="form-group">
+    <label for="inputPassword">Password</label>
+    <input type="password" name="user[password]" placeholder="6 or more characters"><br>
+    <button type="submit" name="submit" value="create" class="btn btn-default">Create new Account</button>
+  </div>
+</form>
