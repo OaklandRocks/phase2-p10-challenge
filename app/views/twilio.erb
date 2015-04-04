@@ -1,10 +1,11 @@
 
 
 <h1>Twilio Sender</h1>
-
+<img class="album_image" src="<%= @photo.path %>">
 <form action="/send_sms" method= "POST">
-  <!-- <input type="text" name="number" placeholder="Number"> -->
+  <input type="text" name="number" placeholder="sender Number">
   <input type="text" name="message" placeholder="Your message">
-  <input type="file" name="path" class="choose_file" >
+  <!-- <input type="file" name="path" class="choose_file" > -->
+  <input type="hidden" name="photopath" value="<%=@photo.path  %>">
   <button type="submit">Submit</button>
 </form>

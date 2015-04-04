@@ -1,11 +1,11 @@
-require 'pry'
+# require 'pry'
+
+
 post '/photo' do
 # binding.pry
   @album = Album.where(id: params[:album_id]).first
   @photo = @album.photos.build #create photo at new instance of activerecord association
   @photo.path = params[:path]
-  # p @photo
-  # p @photo.path
   if @photo.save
     redirect "/albums/#{@album.id}"
     # p "#{@album.id}"
@@ -26,18 +26,3 @@ delete '/photo/:id' do
   @photo.destroy
   redirect "/albums/#{@photo.album_id}"
 end
-
-
-
-
-# post '/photo' do
-#   album = Album.where(id: params[:album_id]).first
-#     @photo = album.photos.build
-#     @photo.path = params[:path]
-#     if @photo.save
-#       redirect "/albums/#{album.id}"
-#       p "#{album.id}"
-#     else
-#       erb :'/albums/show'
-#     end
-# end

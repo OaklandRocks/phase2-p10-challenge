@@ -16,7 +16,6 @@ post '/albums'  do
 end
 get '/albums/all' do
   @albums = Album.all
-  # text_message("url")
   erb :'albums/list'
 end
 
